@@ -38,7 +38,7 @@ const Login = () => {
 
         try {
           
-          const response = await axios.post('http://localhost:5000/api/users/login', userData);
+          const response = await axios.post('${import.meta.env.VITE_API_URL}/users/login', userData);
           const user = await response.data;
           setCurrentUser(user)
           navigate('/')

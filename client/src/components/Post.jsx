@@ -11,7 +11,7 @@ const Post = () => {
     const fetchPosts = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get("http://localhost:5000/api/posts");
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/posts`);
         
         // Assuming the response contains an array of posts, not just one post.
         setPosts(response?.data[0]);

@@ -36,7 +36,7 @@ const UserProfile = () => {
 
   useEffect(()=>{
     const getUser = async () =>{
-      const response = await axios.get(`http://localhost:5000/api/users/${currentUser.id}` , {withCredentials: true, headers:{Authorization:`Bearer ${token}`}});
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/users/${currentUser.id}` , {withCredentials: true, headers:{Authorization:`Bearer ${token}`}});
 
       const {name , email , avatar} = response.data;
       setName(name);
@@ -61,7 +61,7 @@ const UserProfile = () => {
 
       postData.set('avatar', avatar);
 
-      const response = await axios.post(`http://localhost:5000/api/users/change-avatar`,postData, { withCredentials: true, headers: { Authorization: `Bearer ${token}` } });
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/change-avatar`,postData, { withCredentials: true, headers: { Authorization: `Bearer ${token}` } });
 
       setAvatar(response?.data.avatar);
 
@@ -88,7 +88,7 @@ const UserProfile = () => {
     userData.set('confirmNewPassword', confirmNewPassword);
     
     const response = await axios.patch(
-            `http://localhost:5000/api/users/edit-user`,userData ,
+            `${import.meta.env.VITE_API_URL}/users/edit-user`,userData ,
             { withCredentials: true, headers: { Authorization: `Bearer ${token}` } }
           )
     

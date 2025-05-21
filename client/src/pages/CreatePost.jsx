@@ -60,7 +60,7 @@ useEffect(()=>{
 
 
     try {
-      const response = await axios.post(`http://localhost:5000/api/posts`, postData , {withCredentials: true, headers:{Authorization:`Bearer ${token}`}});
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/posts`, postData , {withCredentials: true, headers:{Authorization:`Bearer ${token}`}});
 
       if(response.status == 201){
         return navigate('/');

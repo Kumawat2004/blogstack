@@ -12,7 +12,7 @@ const PostItem = ({ postID, category, title, description, authorID, post , thumb
     <>
       <article className="post">
         <div className="post_thumbnail">
-          <img src={`http://localhost:5000/uploads/${thumbnail}`} alt={title} />
+          <img src={`${import.meta.env.VITE_API_URL}/uploads/${thumbnail}`} alt={title} />
         </div>
         <div className="post_content">
           <Link to={`/posts/${postID}`}>

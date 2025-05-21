@@ -13,7 +13,7 @@ const Register = () => {
   });
 
  
-  // console.log('http://localhost:5000/api/users/register');
+  // console.log('${import.meta.env.VITE_API_URL}/users/register');
 
 
   const [error , setError] = useState('');
@@ -39,7 +39,7 @@ const Register = () => {
     try {
      
       const response = await axios.post(
-        `http://localhost:5000/api/users/register`,
+        `${import.meta.env.VITE_API_URL}/users/register`,
         userData
       );
   

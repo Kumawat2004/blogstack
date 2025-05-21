@@ -73,7 +73,7 @@ const EditPost = () => {
     const getPost = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/posts/${id}`
+          `${import.meta.env.VITE_API_URL}/posts/${id}`
         );
 
         setTitle(response.data.title);
@@ -97,7 +97,7 @@ const EditPost = () => {
 
     try {
       const response = await axios.patch(
-        `http://localhost:5000/api/posts/${id}`,
+        `${import.meta.env.VITE_API_URL}/posts/${id}`,
         postData,
         { withCredentials: true, headers: { Authorization: `Bearer ${token}` } }
       );

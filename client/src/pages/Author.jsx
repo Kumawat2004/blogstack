@@ -28,7 +28,7 @@ const Author = () => {
       setIsLoading(true);
 
       try {
-        const response = await axios.get(`http://localhost:5000/api/users`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/users`);
 
         setAuthors(response.data);
 

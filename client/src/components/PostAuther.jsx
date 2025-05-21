@@ -22,7 +22,7 @@ const PostAuther = ({authorID , createdAt}) => {
     const getAuthor = async () =>{
     try {
       
-        const response = await axios.get(`http://localhost:5000/api/users/${authorID}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/users/${authorID}`);
         setAuthor(response?.data);
   
       
@@ -40,7 +40,7 @@ const PostAuther = ({authorID , createdAt}) => {
     <>
     <Link to={`/posts/users/${authorID}`} className='post_author'>
     <div className='post_author-avatar'>
-        <img src={`http://localhost:5000/uploads/${author?.avatar}`} alt="" />
+        <img src={`${import.meta.env.VITE_API_URL}/uploads/${author?.avatar}`} alt="" />
     </div>
     <div className="post_author-details">
         <h5>By: {author?.name}</h5>
