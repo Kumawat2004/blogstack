@@ -61,7 +61,7 @@ const Dashboard = () => {
                 return <article key={post.id} className="dashboard_post">
                   <div className="dashboard_post-info">
                   <div className="dashborad_post-thumbnail">
-                  <img src={`http://localhost:5000/uploads/${post.thumbnail}`} alt="" />
+                  <img src={`${import.meta.env.VITE_API_URL}/uploads/${post.thumbnail}`} alt="" />
                   </div>
                   <h5>{post.title}</h5>
                   </div>

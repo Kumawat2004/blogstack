@@ -118,7 +118,7 @@ const UserProfile = () => {
       <div className="profile_details">
         <div className="avatar_wrapper">
           <div className="profile_avatar">
-            <img src={`http://localhost:5000/uploads/${avatar}`} alt="" />
+            <img src={`${import.meta.env.VITE_API_URL}/uploads/${avatar}`} alt="" />
             {/* <img src={Avatar} alt="" /> */}
           </div>
           {/* Form to update avatar */}

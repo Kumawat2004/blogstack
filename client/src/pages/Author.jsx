@@ -61,7 +61,7 @@ const Author = () => {
               <>
               <Link key={id} to={`/posts/users/${id}`} className='author'>
           <div className="author_avatar">
-            <img src={`http://localhost:5000/uploads/${avatar}`} alt={`Image of ${name}`} />
+            <img src={`${import.meta.env.VITE_API_URL}/uploads/${avatar}`} alt={`Image of ${name}`} />
 
             </div>    
             <div className="author_info">
