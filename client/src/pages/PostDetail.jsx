@@ -68,7 +68,7 @@ const PostDetail = () => {
     <h1>{post.title}</h1>
 
     <div className="post-detail_tumbnail">
-      <img src={{post.thumbnail}} alt="" />
+      <img src={`${import.meta.env.VITE_API_URL}/uploads/${post.thumbnail}`} alt="" />
     </div>
 
 <p dangerouslySetInnerHTML= {{__html: post.description}}></p>
