@@ -13,7 +13,7 @@ const {notFound , errorHandler} = require('./middleware/errorMiddleware');
 
 app.use(express.json({extended: true}));
 app.use(express.urlencoded({extended: true}));
-app.use(cors({credentials: true, origin: "http://localhost:5173"}));
+app.use(cors({credentials: true, origin: process.env.URL_FRONTEND}));
 app.use(upload());
 app.use('/api/uploads', express.static(__dirname + '/uploads'));
 
